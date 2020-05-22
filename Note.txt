@@ -1,0 +1,35 @@
+VS code setup for project:
+1. C# for Visual Studio Code(Powered by Omnisharp)
+2. C# Extensions(used to created .cs file in folders). 
+   Some time C# Extension ask with a message box : Required to Assets to build and debug are missing from 'DatingApp.API'. Add them?
+   If we select Yes. It will added a file launch.json in .vscode folder. 
+   If the message box is not show, we need to add manually. Ctrl + Shift + P --> .NET : Generate Assets for Build and Debug
+3. NuGet Package Manager
+4. EntityFramework for DBContext creation in project. Ctrl + Shift + P --> Microsoft.EntityFrameworkCore
+5. For Sqllite DB. Ctrl + Shift + P --> Microsoft.EntityFrameworkCore.Sqlite
+6. In Program.cs file, setting connection string, "Configuration.GetConnectionString("DefaultConnection"), should have following json format in appsettings.json
+   "ConnectionStrings":{
+     "DefaultConnection" : "Data Source=datingapp.db"
+    }
+    Here ConnectionStrings should be ConnectionStrings, not ConnectionString or anyother name
+7. EntityFramework tool used to manage database, manage dbcontext type & manage migrations. (Example for Sqlite)
+      In Terminal :
+ 	dotnet tool install --global dotnet-ef (Tool install globaly)
+	dotnet ef -help
+        dotnet ef migrations add InitialContext --> Used to create migration folder in project
+	dotnet ef database update --> Will create .db(database file) file in project. Example datingapp.db
+
+Other usefule Angular extenstions in vscode
+Angular Snippets
+Angular file(used to right click and create components along with its depended files)
+Angular Language Service (Angular & Html intellicence, go to definitions etc.,)
+Auto Rename Tag (used to auto change other end of tag, if one side is changed)
+Bracket Pair Colorizer 2 (uniquely find open and closing sqaure bracket of each method)
+Debugger for chrome
+Material Icon Theme
+Prettier
+tslint
+angular2-switcher(Easily navigate to component's files)
+
+Git:
+1. Create new repo command : git init
